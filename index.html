@@ -1208,7 +1208,7 @@ body::before {
 }
 
 /* ================================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET  (≤ 960px)
 ================================================================ */
 @media (max-width: 960px) {
   #nav { padding: 1.5rem 1.5rem; }
@@ -1222,7 +1222,7 @@ body::before {
 
   .story-img { aspect-ratio: 3/2; }
 
-  /* Tablet gallery — 2 col, nicer proportions */
+  /* Tablet gallery */
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: .7rem; padding: 0 1rem; }
   .gc:nth-child(1) { grid-column: 1/3; aspect-ratio: 16/7; }
   .gc:nth-child(2) { grid-column: 1/2; aspect-ratio: 4/5; }
@@ -1231,23 +1231,78 @@ body::before {
   .gc:nth-child(5) { grid-column: 2/3; aspect-ratio: 1; }
   .gc:nth-child(6) { grid-column: 1/3; aspect-ratio: 21/9; }
   .gc:nth-child(7) { grid-column: 1/3; aspect-ratio: 21/9; }
-  /* Reset directional transforms on tablet — all come from bottom */
   .gc { transform: translateY(28px); }
   .gc:nth-child(3) { transform: translateY(28px) scale(1); }
 
   .foot-cols { grid-template-columns: 1fr; gap: 1.8rem; }
   .frow { grid-template-columns: 1fr; gap: 1.8rem; }
+
+  /* Spotlight frame tighter on tablet */
+  .spot-frame { inset: 1.5rem; }
 }
 
+/* ================================================================
+   RESPONSIVE — MOBILE  (≤ 600px)
+================================================================ */
 @media (max-width: 600px) {
+  /* ---- Splash ---- */
+  .splash-name {
+    font-size: clamp(1.6rem, 9vw, 2.6rem);
+    letter-spacing: 0.18em;
+    word-spacing: -0.1em;
+  }
+  .splash-sub {
+    font-size: .68rem;
+    letter-spacing: 0.28em;
+    padding: 0.4rem 1rem;
+  }
+  .splash-divider { width: 28px; }
+  .splash-btn {
+    padding: 0.85rem 2.5rem;
+    letter-spacing: 0.35em;
+    font-size: .6rem;
+  }
+
+  /* ---- Nav ---- */
+  #nav { padding: 1.2rem 1.25rem; }
+  .nav-logo { font-size: 1.1rem; letter-spacing: .18em; }
+
+  /* ---- Hero ---- */
+  #hero { padding: 8rem 1.25rem 5rem; }
+  .hero-hl { font-size: clamp(2.6rem, 11vw, 4rem); }
+  .hero-tag { font-size: .82rem; margin-bottom: 2rem; }
+  .hero-ctas { flex-direction: column; align-items: center; gap: 1rem; }
+  .btn-fill, .btn-out { width: 100%; max-width: 300px; text-align: center; }
+  .blossom-l { width: clamp(120px, 36vw, 200px); }
+  .blossom-r { width: clamp(100px, 28vw, 170px); }
+
+  /* ---- Section spacing ---- */
   .wrap { padding: 0 1.25rem; }
-  .hero-ctas { flex-direction: column; align-items: center; }
-  .menu-tabs { flex-wrap: wrap; }
-  .tab { padding: .7rem 1.4rem; font-size: .6rem; }
+  #menu, #story, #gallery, #reservations, #find-us, #testimonials { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .sec-head { margin-bottom: 2.5rem; }
+  .sec-head::before, .sec-head::after { max-width: 40px; }
+
+  /* ---- Menu ---- */
+  .menu-tabs { flex-wrap: wrap; gap: 0; }
+  .tab { padding: .65rem 1.2rem; font-size: .58rem; letter-spacing: .22em; }
+  .dish-name { font-size: .95rem; }
+  .dish-price { padding-left: 1rem; font-size: .88rem; }
+  .dish-desc { font-size: .72rem; }
+
+  /* ---- Story ---- */
+  .story-head { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .story-body { font-size: .85rem; }
   .story-stats { flex-direction: column; gap: 1.2rem; }
   .stat::after { display: none; }
-  .spot-frame { inset: 1rem; }
-  /* Mobile gallery — single column, cinematic tall cells */
+  .stat-n { font-size: 2rem; }
+  .story-blossom { margin-top: 1.5rem; }
+
+  /* ---- Spotlight ---- */
+  .spot-frame { inset: .75rem; }
+  .spot-title { font-size: clamp(2rem, 9vw, 3.5rem); }
+  .spot-inner { padding: 4rem 1.5rem; }
+
+  /* ---- Gallery ---- */
   .gallery-grid { grid-template-columns: 1fr; padding: 0 1rem; gap: .6rem; }
   .gc { grid-column: 1 !important; }
   .gc:nth-child(1) { aspect-ratio: 4/3; }
@@ -1257,12 +1312,40 @@ body::before {
   .gc:nth-child(5) { aspect-ratio: 16/9; }
   .gc:nth-child(6) { aspect-ratio: 4/3; }
   .gc:nth-child(7) { aspect-ratio: 16/9; }
-  /* Mobile: all cells slide up cleanly */
   .gc { transform: translateY(24px) !important; }
-  /* Show overlay hint on mobile without hover */
   .gc-over { opacity: .15; }
   .gc:active .gc-over { opacity: 1; }
-  .tes-quote-mark { font-size: 7rem; top: -2rem; left: -.5rem; }
+
+  /* ---- Testimonials ---- */
+  .tes-quote-mark { font-size: 6rem; top: -1.5rem; left: -.25rem; }
+  .tes-text { font-size: .95rem; }
+  .tes-slide { padding: 1rem 1rem 1.5rem; }
+
+  /* ---- Reservations ---- */
+  .frow { grid-template-columns: 1fr; gap: 1.8rem; }
+  .res-grid { gap: 2.5rem; }
+
+  /* ---- Find Us ---- */
+  .map-box { aspect-ratio: 1; }
+
+  /* ---- Footer ---- */
+  .foot-cols { grid-template-columns: 1fr; gap: 1.5rem; }
+  .foot-name { font-size: 1.6rem; letter-spacing: .2em; }
+  .foot-socials { gap: 1.5rem; }
+  .foot-soc { letter-spacing: .25em; font-size: .6rem; }
+}
+
+/* ================================================================
+   RESPONSIVE — SMALL PHONES  (≤ 380px)
+================================================================ */
+@media (max-width: 380px) {
+  .splash-name {
+    font-size: clamp(1.4rem, 8.5vw, 1.9rem);
+    letter-spacing: 0.12em;
+  }
+  .splash-btn { padding: .8rem 2rem; letter-spacing: .28em; }
+  .hero-hl { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .tab { padding: .6rem 1rem; font-size: .55rem; }
 }
 </style>
 </head>
