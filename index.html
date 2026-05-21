@@ -93,6 +93,14 @@ body::before {
     rgba(var(--charcoal-rgb), 0.88) 100%
   );
 }
+.sp {
+  position: absolute;
+  border-radius: 80% 0 80% 0;
+  background: rgba(232, 176, 194, .55);
+  pointer-events: none;
+  z-index: 3;
+  animation: petalDrift linear infinite;
+}
 .splash-inner {
   position: relative;
   z-index: 2;
@@ -1254,6 +1262,13 @@ body::before {
      SPLASH
 ================================================================ -->
 <div id="splash">
+  <div class="sp" style="left:8%;animation-duration:10s;animation-delay:0s;width:16px;height:20px"></div>
+  <div class="sp" style="left:22%;animation-duration:13s;animation-delay:1.8s;width:13px;height:17px"></div>
+  <div class="sp" style="left:38%;animation-duration:9s;animation-delay:3.5s;width:15px;height:19px"></div>
+  <div class="sp" style="left:55%;animation-duration:12s;animation-delay:0.8s;width:14px;height:18px"></div>
+  <div class="sp" style="right:20%;animation-duration:11s;animation-delay:2.4s;width:16px;height:21px"></div>
+  <div class="sp" style="right:8%; animation-duration:8s; animation-delay:4.5s;width:12px;height:15px"></div>
+  <div class="sp" style="left:70%;animation-duration:14s;animation-delay:6s;  width:11px;height:14px"></div>
   <div class="splash-inner">
     <h1 class="splash-name">Restaurant</h1>
     <div class="splash-divider"></div>
